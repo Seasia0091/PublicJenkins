@@ -28,34 +28,34 @@ protocol Configuration {
 
 struct Staging: Configuration {
     var certificate = "ios_distribution"
-    var provisioningProfile = "Brewer_Staging"
+    var provisioningProfile = "GymData_Dev"
     var buildConfiguration = "Staging"
-    var appIdentifier = "works.sth.brewer.staging"
-    var exportMethod = "ad-hoc"
+    var appIdentifier = "com.seasia.gymData"
+    var exportMethod = "development"
 }
 
 struct Production: Configuration {
     var certificate = "ios_distribution"
-    var provisioningProfile = "Brewer_Production"
+    var provisioningProfile = "GymData_Dev"
     var buildConfiguration = "Production"
-    var appIdentifier = "works.sth.brewer.production"
-    var exportMethod = "ad-hoc"
+    var appIdentifier = "com.seasia.gymData"
+    var exportMethod = "development"
 }
 
 struct Release: Configuration {
     var certificate = "ios_distribution"
-    var provisioningProfile = "Brewer_Release"
+    var provisioningProfile = "GymData_Dev"
     var buildConfiguration = "Release"
-    var appIdentifier = "works.sth.brewer"
-    var exportMethod = "app-store"
+    var appIdentifier = "com.seasia.gymData"
+    var exportMethod = "development"
 }
 
 enum ProjectSetting {
-    static var workspace = "brewer.xcworkspace"
-    static var project = "brewer.xcodeproj"
-    static var scheme = "brewer"
-    static var target = "brewer"
-    static var productName = "brewer"
+    static var workspace = "JenkinsExample.xcworkspace"
+    static var project = "JenkinsExample.xcodeproj"
+    static var scheme = "JenkinsExample"
+    static var target = "JenkinsExample"
+    static var productName = "JenkinsExample"
     static let devices: [String] = ["iPhone 8", "iPad Air"]
 
     static let codeSigningPath = environmentVariable(get: "CODESIGNING_PATH").replacingOccurrences(of: "\"", with: "")
@@ -66,10 +66,10 @@ enum ProjectSetting {
 
 /* Lanes */
 class Fastfile: LaneFile {
-    var stubKeyChainPassword: String = "stub"
+    var stubKeyChainPassword: String = "mind@123"
 
     var keyChainName: String {
-        return "\(ProjectSetting.productName).keychain"
+        return "login.keychain"
     }
 
     var keyChainDefaultFilePath: String {
@@ -77,12 +77,12 @@ class Fastfile: LaneFile {
     }
 
     func beforeAll() {
-        cocoapods()
+        //cocoapods()
     }
 
     func package(config: Configuration) {
         if FileManager.default.fileExists(atPath: keyChainDefaultFilePath) {
-            deleteKeychain(name: keyChainName)
+            //deleteKeychain(name: keyChainName)
         }
 
         createKeychain(
@@ -108,9 +108,9 @@ class Fastfile: LaneFile {
             buildConfiguration: config.buildConfiguration
         )
 
-        runTests(workspace: ProjectSetting.workspace,
-            devices: ProjectSetting.devices,
-            scheme: ProjectSetting.scheme)
+       // runTests(workspace: ProjectSetting.workspace,
+           // devices: ProjectSetting.devices,
+           // scheme: ProjectSetting.scheme)
 
         buildApp(
             workspace: ProjectSetting.workspace,
@@ -128,7 +128,7 @@ class Fastfile: LaneFile {
 
         )
 
-        deleteKeychain(name: keyChainName)
+       // deleteKeychain(name: keyChainName)
     }
 
     func developerReleaseLane() {

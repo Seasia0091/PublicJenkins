@@ -12,6 +12,7 @@
 		2B151FFE221180E000FF415C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B151FFC221180E000FF415C /* Main.storyboard */; };
 		2B152000221180E000FF415C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B151FFF221180E000FF415C /* Assets.xcassets */; };
 		2B152003221180E000FF415C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B152001221180E000FF415C /* LaunchScreen.storyboard */; };
+		946D9C28BCB013B88CCA8D33 /* Pods_JenkinsExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B27366B4353FC268EA20EBF /* Pods_JenkinsExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		2B151FFF221180E000FF415C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B152002221180E000FF415C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B152004221180E000FF415C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B27366B4353FC268EA20EBF /* Pods_JenkinsExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JenkinsExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E86EB42B0621FE7D5C2440B3 /* Pods-JenkinsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JenkinsExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-JenkinsExample/Pods-JenkinsExample.release.xcconfig"; sourceTree = "<group>"; };
+		FA0B5CFAC3E05480772D380B /* Pods-JenkinsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JenkinsExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JenkinsExample/Pods-JenkinsExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				946D9C28BCB013B88CCA8D33 /* Pods_JenkinsExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				2B151FF7221180E000FF415C /* JenkinsExample */,
 				2B151FF6221180E000FF415C /* Products */,
+				5122BBB20E473228BF7A54B5 /* Pods */,
+				E1F5583069E776911F778645 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = JenkinsExample;
 			sourceTree = "<group>";
 		};
+		5122BBB20E473228BF7A54B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA0B5CFAC3E05480772D380B /* Pods-JenkinsExample.debug.xcconfig */,
+				E86EB42B0621FE7D5C2440B3 /* Pods-JenkinsExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E1F5583069E776911F778645 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B27366B4353FC268EA20EBF /* Pods_JenkinsExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,6 +95,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B152007221180E000FF415C /* Build configuration list for PBXNativeTarget "JenkinsExample" */;
 			buildPhases = (
+				CDC64DE1B6D2438F1A33D0FB /* [CP] Check Pods Manifest.lock */,
 				2B151FF1221180E000FF415C /* Sources */,
 				2B151FF2221180E000FF415C /* Frameworks */,
 				2B151FF3221180E000FF415C /* Resources */,
@@ -130,6 +155,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CDC64DE1B6D2438F1A33D0FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JenkinsExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2B151FF1221180E000FF415C /* Sources */ = {
@@ -272,6 +322,7 @@
 		};
 		2B152008221180E000FF415C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA0B5CFAC3E05480772D380B /* Pods-JenkinsExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -288,6 +339,7 @@
 		};
 		2B152009221180E000FF415C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E86EB42B0621FE7D5C2440B3 /* Pods-JenkinsExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;

@@ -61,7 +61,7 @@ enum ProjectSetting {
     static let codeSigningPath = environmentVariable(get: "CODESIGNING_PATH").replacingOccurrences(of: "\"", with: "")
     static let keyChainDefaultPath = environmentVariable(get: "KEYCHAIN_DEFAULT_PATH").replacingOccurrences(of: "\"", with: "")
     static let certificatePassword = environmentVariable(get: "CERTIFICATE_PASSWORD").replacingOccurrences(of: "\"", with: "")
-    static let sdk = "iphoneos11.2"
+    static let sdk = "iphoneos10.0"
 }
 
 /* Lanes */

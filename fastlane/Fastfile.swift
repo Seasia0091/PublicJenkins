@@ -28,23 +28,23 @@ protocol Configuration {
 
 struct Staging: Configuration {
     var certificate = "ios_distribution"
-    var provisioningProfile = "GymData_Dist"
-    var buildConfiguration = "Staging"
+    var provisioningProfile = "GymData_Ent_Dist"
+    var buildConfiguration = "Release"
     var appIdentifier = "com.seasia.gymData"
     var exportMethod = "development"
 }
 
 struct Production: Configuration {
     var certificate = "ios_distribution"
-    var provisioningProfile = "GymData_Dist"
-    var buildConfiguration = "Production"
+    var provisioningProfile = "GymData_Ent_Dist"
+    var buildConfiguration = "Release"
     var appIdentifier = "com.seasia.gymData"
     var exportMethod = "development"
 }
 
 struct Release: Configuration {
     var certificate = "ios_distribution"
-    var provisioningProfile = "GymData_Dist"
+    var provisioningProfile = "GymData_Ent_Dist"
     var buildConfiguration = "Release"
     var appIdentifier = "com.seasia.gymData"
     var exportMethod = "development"
@@ -61,7 +61,7 @@ enum ProjectSetting {
     static let codeSigningPath = environmentVariable(get: "CODESIGNING_PATH").replacingOccurrences(of: "\"", with: "")
     static let keyChainDefaultPath = environmentVariable(get: "KEYCHAIN_DEFAULT_PATH").replacingOccurrences(of: "\"", with: "")
     static let certificatePassword = environmentVariable(get: "CERTIFICATE_PASSWORD").replacingOccurrences(of: "\"", with: "")
-    static let sdk = "iOS 10.0"
+    static let sdk = "iphoneos11.2"
 }
 
 /* Lanes */
@@ -69,7 +69,7 @@ class Fastfile: LaneFile {
     var stubKeyChainPassword: String = "mind@123"
 
     var keyChainName: String {
-        return "login.keychain"
+        return "JenkinsKey.keychain"
     }
 
     var keyChainDefaultFilePath: String {
@@ -82,7 +82,7 @@ class Fastfile: LaneFile {
 
     func package(config: Configuration) {
         if FileManager.default.fileExists(atPath: keyChainDefaultFilePath) {
-            //deleteKeychain(name: keyChainName)
+           // deleteKeychain(name: keyChainName)
         }
 
         createKeychain(

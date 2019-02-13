@@ -170,7 +170,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" c272a718f7390ca96d2670a946ddc80cd6d5cea2 c610e31e5a08062c4a38bc3f17378b448fe6d5958471ab0ccf7bfee85e78e956";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" c272a718f7390ca96d2670a946ddc80cd6d5cea2 c610e31e5a08062c4a38bc3f17378b448fe6d5958471ab0ccf7bfee85e78e956\n";
+			showEnvVarsInLog = 0;
 		};
 		CDC64DE1B6D2438F1A33D0FB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -336,16 +337,19 @@
 			baseConfigurationReference = FA0B5CFAC3E05480772D380B /* Pods-JenkinsExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = QTPW9SY47V;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JenkinsExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.seasia.gymData;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seasia.jenkins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f6376739-e612-4ceb-b1c0-366e143b1bb5";
-				PROVISIONING_PROFILE_SPECIFIER = GymData_Dev_Ent_Prov_21Jan2019;
+				PROVISIONING_PROFILE = "427f46f8-2bd1-4159-b49f-119cedd665d8";
+				PROVISIONING_PROFILE_SPECIFIER = Jenkins_Production;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -356,16 +360,18 @@
 			baseConfigurationReference = E86EB42B0621FE7D5C2440B3 /* Pods-JenkinsExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = QTPW9SY47V;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JenkinsExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.seasia.gymData;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seasia.jenkins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f6376739-e612-4ceb-b1c0-366e143b1bb5";
-				PROVISIONING_PROFILE_SPECIFIER = GymData_Dev_Ent_Prov_21Jan2019;
+				PROVISIONING_PROFILE = "427f46f8-2bd1-4159-b49f-119cedd665d8";
+				PROVISIONING_PROFILE_SPECIFIER = Jenkins_Production;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -28,26 +28,26 @@ protocol Configuration {
 
 struct Staging: Configuration {
     var certificate = "ios_distribution"
-    var provisioningProfile = "GymData_Ent_Dist"
+    var provisioningProfile = "Jenkins_Production"
     var buildConfiguration = "Release"
-    var appIdentifier = "com.seasia.gymData"
-    var exportMethod = "development"
+    var appIdentifier = "com.seasia.jenkins"
+    var exportMethod = "enterprise"
 }
 
 struct Production: Configuration {
     var certificate = "ios_distribution"
-    var provisioningProfile = "GymData_Ent_Dist"
+    var provisioningProfile = "Jenkins_Production"
     var buildConfiguration = "Release"
-    var appIdentifier = "com.seasia.gymData"
-    var exportMethod = "development"
+    var appIdentifier = "com.seasia.jenkins"
+    var exportMethod = "enterprise"
 }
 
 struct Release: Configuration {
     var certificate = "ios_distribution"
-    var provisioningProfile = "GymData_Ent_Dist"
+    var provisioningProfile = "Jenkins_Production"
     var buildConfiguration = "Release"
-    var appIdentifier = "com.seasia.gymData"
-    var exportMethod = "development"
+    var appIdentifier = "com.seasia.jenkins"
+    var exportMethod = "enterprise"
 }
 
 enum ProjectSetting {
@@ -77,12 +77,12 @@ class Fastfile: LaneFile {
     }
 
     func beforeAll() {
-        //cocoapods()
+        cocoapods()
     }
 
     func package(config: Configuration) {
         if FileManager.default.fileExists(atPath: keyChainDefaultFilePath) {
-           // deleteKeychain(name: keyChainName)
+            deleteKeychain(name: keyChainName)
         }
 
         createKeychain(
@@ -124,21 +124,29 @@ class Fastfile: LaneFile {
             exportOptions: [
                 "signingStyle": "manual",
                 "provisioningProfiles": [config.appIdentifier: config.provisioningProfile] ],
-            sdk: ProjectSetting.sdk
+            sdk: ProjectSetting.sdk,
+            skipProfileDetection: true
 
         )
 
-       // deleteKeychain(name: keyChainName)
+        //deleteKeychain(name: keyChainName)
     }
 
     func developerReleaseLane() {
         desc("Create a developer release")
         package(config: Staging())
+
         crashlytics(
             ipaPath: "./\(ProjectSetting.productName).ipa",
-            apiToken: environmentVariable(get: "CRASHLYTICS_API_KEY").replacingOccurrences(of: "\"", with: ""),
-            buildSecret: environmentVariable(get: "CRASHLYTICS_BUILD_SECRET").replacingOccurrences(of: "\"", with: "")
+            apiToken:"c272a718f7390ca96d2670a946ddc80cd6d5cea2",
+            buildSecret:"c610e31e5a08062c4a38bc3f17378b448fe6d5958471ab0ccf7bfee85e78e956"
         )
+
+//        crashlytics(
+//            ipaPath: "./\(ProjectSetting.productName).ipa",
+//            apiToken: environmentVariable(get: "CRASHLYTICS_API_KEY").replacingOccurrences(of: "\"", with: ""),
+//            buildSecret: environmentVariable(get: "CRASHLYTICS_BUILD_SECRET").replacingOccurrences(of: "\"", with: "")
+//        )
     }
 
     func qaReleaseLane() {
@@ -146,9 +154,14 @@ class Fastfile: LaneFile {
         package(config: Production())
         crashlytics(
             ipaPath: "./\(ProjectSetting.productName).ipa",
-            apiToken: environmentVariable(get: "CRASHLYTICS_API_KEY").replacingOccurrences(of: "\"", with: ""),
-            buildSecret: environmentVariable(get: "CRASHLYTICS_BUILD_SECRET").replacingOccurrences(of: "\"", with: "")
+            apiToken:"c272a718f7390ca96d2670a946ddc80cd6d5cea2",
+            buildSecret:"c610e31e5a08062c4a38bc3f17378b448fe6d5958471ab0ccf7bfee85e78e956"
         )
+//        crashlytics(
+//            ipaPath: "./\(ProjectSetting.productName).ipa",
+//            apiToken: environmentVariable(get: "CRASHLYTICS_API_KEY").replacingOccurrences(of: "\"", with: ""),
+//            buildSecret: environmentVariable(get: "CRASHLYTICS_BUILD_SECRET").replacingOccurrences(of: "\"", with: "")
+//        )
     }
 
 }

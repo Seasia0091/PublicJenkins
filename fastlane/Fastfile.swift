@@ -28,7 +28,7 @@ protocol Configuration {
 
 struct Staging: Configuration {
     var certificate = "ios_distribution"
-    var provisioningProfile = "GymData_Dev"
+    var provisioningProfile = "GymData_Dist"
     var buildConfiguration = "Staging"
     var appIdentifier = "com.seasia.gymData"
     var exportMethod = "development"
@@ -36,7 +36,7 @@ struct Staging: Configuration {
 
 struct Production: Configuration {
     var certificate = "ios_distribution"
-    var provisioningProfile = "GymData_Dev"
+    var provisioningProfile = "GymData_Dist"
     var buildConfiguration = "Production"
     var appIdentifier = "com.seasia.gymData"
     var exportMethod = "development"
@@ -44,7 +44,7 @@ struct Production: Configuration {
 
 struct Release: Configuration {
     var certificate = "ios_distribution"
-    var provisioningProfile = "GymData_Dev"
+    var provisioningProfile = "GymData_Dist"
     var buildConfiguration = "Release"
     var appIdentifier = "com.seasia.gymData"
     var exportMethod = "development"
@@ -61,7 +61,7 @@ enum ProjectSetting {
     static let codeSigningPath = environmentVariable(get: "CODESIGNING_PATH").replacingOccurrences(of: "\"", with: "")
     static let keyChainDefaultPath = environmentVariable(get: "KEYCHAIN_DEFAULT_PATH").replacingOccurrences(of: "\"", with: "")
     static let certificatePassword = environmentVariable(get: "CERTIFICATE_PASSWORD").replacingOccurrences(of: "\"", with: "")
-    static let sdk = "iphoneos10.0"
+    static let sdk = "iOS 10.0"
 }
 
 /* Lanes */

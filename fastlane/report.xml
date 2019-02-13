@@ -5,24 +5,24 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: create_keychain" time="0.629745">
+      <testcase classname="fastlane.lanes" name="0: create_keychain" time="0.959229">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: import_certificate" time="10.65697">
+      <testcase classname="fastlane.lanes" name="1: import_certificate" time="9.528858">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: update_project_provisioning" time="0.274621">
+      <testcase classname="fastlane.lanes" name="2: update_project_provisioning" time="0.23121">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: build_app" time="50.640992">
+      <testcase classname="fastlane.lanes" name="3: build_app" time="10.178111">
         
-          <failure message="/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/actions/actions_helper.rb:48:in `execute_action'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/runner.rb:232:in `block in execute_action'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/runner.rb:227:in `chdir'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/runner.rb:227:in `execute_action'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server_action_command_executor.rb:73:in `run'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server_action_command_executor.rb:42:in `execute'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:181:in `execute_action_command'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:176:in `process_action_command'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:123:in `handle_action_command'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:86:in `parse_and_execute_command'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:62:in `block in receive_and_process_commands'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:49:in `loop'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:49:in `receive_and_process_commands'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:158:in `listen'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:38:in `start'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/swift_lane_manager.rb:231:in `block in start_socket_thread'&#10;&#10;Error building the application - see the log above" />
+          <failure message="/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/actions/actions_helper.rb:48:in `execute_action'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/runner.rb:232:in `block in execute_action'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/runner.rb:227:in `chdir'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/runner.rb:227:in `execute_action'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server_action_command_executor.rb:73:in `run'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server_action_command_executor.rb:42:in `execute'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:181:in `execute_action_command'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:176:in `process_action_command'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:123:in `handle_action_command'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:86:in `parse_and_execute_command'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:62:in `block in receive_and_process_commands'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:49:in `loop'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:49:in `receive_and_process_commands'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:158:in `listen'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/server/socket_server.rb:38:in `start'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/fastlane-2.116.0/fastlane/lib/fastlane/swift_lane_manager.rb:231:in `block in start_socket_thread'&#10;&#10;undefined method `each' for nil:NilClass" />
         
       </testcase>
     

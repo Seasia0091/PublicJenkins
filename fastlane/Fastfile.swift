@@ -58,9 +58,9 @@ enum ProjectSetting {
     static var productName = "JenkinsExample"
     static let devices: [String] = ["iPhone 8", "iPad Air"]
 
-    static let codeSigningPath = environmentVariable(get: "CODESIGNING_PATH").replacingOccurrences(of: "\"", with: "")
-    static let keyChainDefaultPath = environmentVariable(get: "KEYCHAIN_DEFAULT_PATH").replacingOccurrences(of: "\"", with: "")
-    static let certificatePassword = environmentVariable(get: "CERTIFICATE_PASSWORD").replacingOccurrences(of: "\"", with: "")
+    static let codeSigningPath = "/Volumes/DATA/Projects/JenkinsCertificate/Certificate"
+    static let keyChainDefaultPath = "/Users/paramvir/Library/Keychains"
+    static let certificatePassword = "123456"
     static let sdk = "iphoneos11.2"
 }
 
@@ -69,7 +69,7 @@ class Fastfile: LaneFile {
     var stubKeyChainPassword: String = "mind@123"
 
     var keyChainName: String {
-        return "JenkinsKey.keychain"
+        return "\(ProjectSetting.productName).keychain"
     }
 
     var keyChainDefaultFilePath: String {

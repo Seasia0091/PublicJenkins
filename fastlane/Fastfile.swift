@@ -51,17 +51,18 @@ struct Release: Configuration {
 }
 
 enum ProjectSetting {
+
     static var workspace = "JenkinsExample.xcworkspace"
     static var project = "JenkinsExample.xcodeproj"
     static var scheme = "JenkinsExample"
     static var target = "JenkinsExample"
     static var productName = "JenkinsExample"
     static let devices: [String] = ["iPhone 8", "iPad Air"]
-
-    static let codeSigningPath = "/Volumes/DATA/Projects/JenkinsCertificate/Certificate"
+    static let codeSigningPath = environmentVariable(get: "CODESIGNING_PATH").replacingOccurrences(of: "\"", with: "")
     static let keyChainDefaultPath = "/Users/paramvir/Library/Keychains"
     static let certificatePassword = "123456"
     static let sdk = "iphoneos11.2"
+
 }
 
 /* Lanes */
